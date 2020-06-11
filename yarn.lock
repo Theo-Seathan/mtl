@@ -117,12 +117,17 @@
     ora "4.0.3"
     rxjs "6.5.4"
 
-"@angular/animations@~8.2.14":
-  version "8.2.14"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-8.2.14.tgz#76736b21e56165e6ca4925fb69605bdcc56aba7d"
-  integrity sha512-3Vc9TnNpKdtvKIXcWDFINSsnwgEMiDmLzjceWg1iYKwpeZGQahUXPoesLwQazBMmxJzQiA4HOMj0TTXKZ+Jzkg==
-  dependencies:
-    tslib "^1.9.0"
+"@angular/animations@^9.1.11":
+  version "9.1.11"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-9.1.11.tgz#2c7b6e584df0ba0884d05f01fa7ab86c1fdd1c5e"
+  integrity sha512-VKAExUnEJfo1PDQKagpx2pn+QMZCsPLRiADzTdl4U0VPylK3ALbn4ZNY9UbdwyE2plitz++LkH7sEGGfh+PNrQ==
+
+"@angular/cdk@9.0":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-9.0.1.tgz#3580375ce0b4aa9ddbd6ea790ab241a8db73b156"
+  integrity sha512-slhYG9lOX7JoxcULdfIvXspkDRjYTBG8PH6B2Slxi8CpV42x0t+yQnBQxp/U3ud1m1BWVrlxwKZywaPFe1tSeA==
+  optionalDependencies:
+    parse5 "^5.0.0"
 
 "@angular/cli@~9.1.8":
   version "9.1.8"
@@ -6218,6 +6223,11 @@ parse5@4.0.0:
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
   integrity sha512-VrZ7eOd3T1Fk4XWNXMgiGBK/z0MG48BWG2uQNU4I72fkQuKUTZpl+u9k+CxEG0twMVzSmXEEz12z5Fnw1jIQFA==
 
+parse5@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
+  integrity sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==
+
 parseqs@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/parseqs/-/parseqs-0.0.5.tgz#d5208a3738e46766e291ba2ea173684921a8b89d"
@@ -6728,6 +6738,16 @@ prepend-http@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
+
+primeicons@^4.0.0-rc.2:
+  version "4.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-4.0.0-rc.2.tgz#af77e84176d9447826de0710ffead9bbd6e9b3f7"
+  integrity sha512-0D7HTNuFC1gp14NRl/CEolerIPWHqiT5P/m5BiUqyPVralIhXRuuAWaw5aahvSQxEiR+y7YJextvT3S6f/hxkw==
+
+primeng@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/primeng/-/primeng-9.1.0.tgz#3d790f7d05b500ec77edf84899b6ef6ffb863c64"
+  integrity sha512-EeW+WA7uT4/7UBJ23Gfb4x8MaTdFpeV9XxAy68K/XIoeTmZ2hNJrdVdfF63y6k7nxwA/mOrkIMshY0eM8nMzoQ==
 
 private@^0.1.8:
   version "0.1.8"
