@@ -1,0 +1,69 @@
+
+<div class="p-grid" [formGroup]="formGroup">
+    <div class="p-offset-2 p-col-8">
+        <div class="p-grid ">
+            <div class="p-lg-6 p-col-12">
+                Department: 
+                <input type="text" 
+                pInputText 
+                formControlName="departmentName"
+                >
+                <div>
+                    <p-message *ngIf="formGroup.get('departmentName').hasError('required') && formGroup.get('departmentName').dirty" severity="error" text="กรุณากรอก department"></p-message>
+                </div>
+            </div>
+            <div class="p-lg-6 p-col-12">
+                Province:
+                <p-dropdown 
+                [options]="provinceOptions"  
+                formControlName="province"
+                placeholder="Select a Province" 
+                [showClear]="true">
+            </p-dropdown>
+            <div>
+                <p-message *ngIf="formGroup.get('province').hasError('required')" severity="error" text="กรุณากรอก province"></p-message>
+            </div>
+            </div>
+            <div class="p-lg-6 p-col-12">
+                Budget: 
+                <input type="text" pInputText 
+                formControlName="budget"
+                
+                > 
+                <div>
+                    <p-message *ngIf="formGroup.get('budget').hasError('required')" severity="error" text="กรุณากรอก budget"></p-message>
+                </div>
+            </div>
+            <!-- <div class="p-lg-6 p-col-12">
+                To
+                <input type="text" pInputText 
+                appMyInputText
+                [(value)]="department.budget"
+                >
+            </div> -->
+            
+            <div class="p-col-12">
+                Status: 
+                <p-radioButton formControlName="status" name="statusSaveForm"  value="Active" label="Active" ></p-radioButton>
+                <p-radioButton formControlName="status" name="statusSaveForm"  value="Deactive" label="Deactive"></p-radioButton>
+            </div>
+        <div class="p-lg-6 p-col-12">
+            Remark: 
+            <input type="text" pInputText 
+            formControlName="remark"
+            >
+            <div>
+                <p-message *ngIf="formGroup.get('remark').hasError('required')" severity="error" text="กรุณากรอก remark"></p-message>
+            </div>
+        </div>
+        </div>
+        <div class="p-lg-6 p-col-12">
+            Telephone: 
+            <p-inputMask formControlName="telephone" mask="(999) 999-9999"  placeholder="(999) 999-9999"></p-inputMask>
+            <div>
+                <p-message *ngIf="formGroup.get('remark').hasError('required')" severity="error" text="กรุณากรอก remark"></p-message>
+            </div>
+        </div>
+
+        </div>
+    </div>

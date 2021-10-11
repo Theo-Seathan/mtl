@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="header">
+        <a class="logo" href="/th">
+            <img class="logo-header" src="../assets/images/logo.png" alt="">
+        </a>
+
+        <div class="login-form ">
+            <i class="pi pi-calendar"></i>&nbsp;
+            <span>Business Date : {{ business_date}}</span> &nbsp; &nbsp;
+            <i class="pi pi-user"></i>&nbsp;
+            <span>{{ user_number}} </span>&nbsp; &nbsp;
+            <span>Role : {{ role}} </span>&nbsp; &nbsp;
+            <i class="logout pi pi-sign-out" (click)="logout()"></i>&nbsp;&nbsp;&nbsp;
+        </div>
+
+    </div>
+    <!-- <p-tabMenu [model]="items" [activeItem]="activeItem" (click)="activateMenu()"></p-tabMenu> -->
+    <p-menubar [model]="items" styleClass="myMenubar"></p-menubar>
+    <div class="body" style="margin-top:30px">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="footer">
+
+        <div class="p-grid">
+            <div class="p-col-9">
+                <label style="display: block; margin-top:2px;">copyright © 2020 Muang Thai Lift Assurance Public Company
+                    Limited.
+                    All
+                    right reserved.</label>
+
+                <label>Muang Thai Lift Assurance website is best viewed with Google Chrome, FireFox, Safari และ Internet
+                    Explorer
+                    or
+                    higher.</label>
+            </div>
+            <div class="p-col-3" style="text-align: center;">
+                Version 1.0.1
+            </div>
+        </div>
+
+    </div>
+</div>

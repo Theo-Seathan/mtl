@@ -1,0 +1,40 @@
+
+<div class="p-grid">
+    <div class="p-offset-2 p-col-8">
+        <div class="p-grid " [formGroup]="formGroup">
+            <div class="p-lg-6 p-col-12">
+                Department: 
+                <input type="text" formControlName="department" pInputText >
+            </div>
+            <div class="p-lg-6 p-col-12">
+                Province:
+                <p-dropdown 
+                formControlName="province"
+                [options]="provinceOptions"  
+                placeholder="Select a Province" 
+                [showClear]="true">
+            </p-dropdown>
+            </div>
+            <div class="p-lg-6 p-col-12">
+                Budget: 
+                <input type="text" pInputText formControlName="budgetFrom" > 
+            </div>
+            <div class="p-lg-6 p-col-12">
+                To
+                <input type="text" pInputText formControlName="budgetTo">
+            </div>
+            
+            <div class="p-col-12">
+                Status: 
+                <p-radioButton formControlName="status" name="status" value="Active" label="Active" ></p-radioButton>
+                <p-radioButton formControlName="status" name="status" value="Deactive" label="Deactive"></p-radioButton>
+            </div>
+            <div class="p-col-12" style="text-align:center">
+                <button pButton style="margin-right:10px" label="Search" type="button" class="ui-button-info"></button>
+                <button pButton  label="Cancel" (click)="resetForm()" type="button" class="ui-button-info"></button>
+                <button pButton  label="Test" (click)="setData()" type="button" class="ui-button-info"></button>
+
+            </div>
+        </div>
+    </div>
+</div>

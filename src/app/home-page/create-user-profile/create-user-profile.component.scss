@@ -1,0 +1,46 @@
+.header {
+  font-family: Ubuntu;
+  color: #ed028c;
+  font-weight: bold;
+}
+
+input {
+  border-radius: 12px;
+}
+
+.icon-search {
+  font-size: 1.5rem;
+  margin-top: 6px;
+  color: #ced4da;
+}
+
+:host ::ng-deep .p-fluid .p-calendar .p-inputtext {
+  border-radius: 12px;
+}
+
+:host ::ng-deep .p-fluid .p-dropdown {
+  border-radius: 12px;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+  color: white;
+  background-color: #ed028c;
+  height: 30px;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-footer {
+  text-align: center;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header .p-dialog-header-icon {
+  color: white;
+}
+
+.submit {
+  text-align: center;
+}
+
+// :host ::ng-deep .p-fluid .p-dropdown {
+//   border-radius: 14px;
+//   height: 38px;
+// }

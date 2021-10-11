@@ -1,0 +1,31 @@
+<p-table [loading]="loading" [value]="departmentList" [paginator]="true" [rows]="5">
+    <ng-template pTemplate="caption">
+        List of Cars
+
+        <button pButton label="Query" (click)="queryDepartment()"></button>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>departmentCode</th>
+            <th>departmentName</th>
+            <th>status</th>
+            <th>province</th>
+            <th>budget</th>
+            <th>telephone</th>
+            <th>remark</th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-department>
+        <tr>
+            <td>{{department.departmentCode}}</td>
+            <td>{{department.departmentName}}</td>
+            <td>{{department.status | departmentStatus}}</td>
+            <td>{{department.province}}</td>
+            <td>{{department.budget}}</td>
+            <td>{{department.telephone}}</td>
+            <td>{{department.remark}}</td>
+
+        </tr>
+    </ng-template>
+</p-table>

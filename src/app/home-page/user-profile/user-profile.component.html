@@ -1,0 +1,77 @@
+<p-card>
+    <div class="p-fluid p-grid p-formgrid">
+        <div class="p-field p-col-12 p-md-12">
+            Create User Profile
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <span class="p-float-label">
+                <input id="float-input" type="text" pInputText>
+                <label for="float-input">User Name</label>
+            </span>
+        </div>
+
+        <div class="p-field p-col-12 p-md-2">
+            <span class="p-float-label">
+                <input id="float-input" type="text" pInputText>
+                <label for="float-input">First Name</label>
+            </span>
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <span class="p-float-label">
+                <input id="float-input" type="text" pInputText>
+                <label for="float-input">Last Name</label>
+            </span>
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+            <button pButton pRipple type="button" label="Search" class="p-button-rounded"
+                style="background-color: #ed028c;margin-left: 10px;margin-right: 8px;width: 110px;"></button>
+            <button pButton pRipple type="button" label="Clear"
+                class="p-button-outlined p-button-rounded p-button-danger" style="color:#ed028c;width: 110px;"></button>
+
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <p-dropdown [options]="cities" placeholder="Role" optionLabel="name"></p-dropdown>
+        </div>
+
+        <div class="p-field p-col-12 p-md-2">
+            <p-dropdown [options]="cities" placeholder="Status" optionLabel="name"></p-dropdown>
+        </div>
+    </div>
+</p-card>
+
+<p-table [value]="user_profile" styleClass="p-datatable-striped" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>No</th>
+            <th>User Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Role</th>
+            <th>Create Date</th>
+            <th>Create By</th>
+            <th>Last Update Date</th>
+            <th>Last Update By</th>
+            <th>First Login</th>
+            <th>Last Login</th>
+            <th>Status</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+        <tr>
+            <td>{{user.No}}</td>
+
+            <td><a (click)="showViewUser(user)"
+                    style=" color: #ee4fac;text-decoration: underline;cursor: pointer;">{{user.Username}}</a></td>
+            <td>{{user.Firstname}}</td>
+            <td>{{user.Lastname}}</td>
+            <td>{{user.Role}}</td>
+            <td>{{user.CreateDate}}</td>
+            <td>{{user.CreateBy}}</td>
+            <td>{{user.UpdateDate}}</td>
+            <td>{{user.UpdateBy}}</td>
+            <td>{{user.FirstLogin}}</td>
+            <td>{{user.LastLogin}}</td>
+            <td>{{user.Status}}</td>
+        </tr>
+    </ng-template>
+</p-table>

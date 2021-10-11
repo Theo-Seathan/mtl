@@ -1,0 +1,14 @@
+{
+    "/department-api/*": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    },
+    "/workshop-api/*": {
+        "target": "https://showcase.cdgs.co.th/",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

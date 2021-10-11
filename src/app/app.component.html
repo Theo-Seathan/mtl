@@ -1,21 +1,265 @@
+<router-outlet></router-outlet>
 
------------- day 2 -------------
+
+<!-- <button pButton [routerLink]="['/products']" label="products"></button>
+<button pButton [routerLink]="['/employees']" label="employess"></button>
+<button pButton [routerLink]="['/department']" label="department"></button>
+<button pButton [routerLink]="[{outlets : {'sidebar':['tv']}}]" label="tv"></button>
+<button pButton [routerLink]="[{outlets : {'sidebar':['av']}}]" label="av"></button>
+<button pButton [routerLink]="[{outlets : {'sidebar':['dp']}}]" label="dp"></button>
+<div class="p-grid">
+  <div class="p-col-10">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="p-col-2">
+    <router-outlet name="sidebar"></router-outlet>
+
+  </div>
+</div>
+
+-----------------------------------------------------------------------------------------------------------
+<button pButton label="Get Characters" (click)="getCharacters()"></button>
+gender :
+<p-dropdown [options]="genderOptions" [formControl]="genderControl"></p-dropdown>
+
+<p-checkbox name="isAlive" [binary]=true [formControl]="isAliveControl" label="Alive"></p-checkbox>
+
 <div>
+  ตารางแสดง Characters
+
+  <p-table selectionMode="single" [paginator]="true" [rows]="5" [value]="characters"
+    (onRowSelect)="showTvSeries($event)">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-character>
+      <tr [pSelectableRow]="character">
+        <td>{{character.name}}</td>
+        <td>{{character.gender}}</td>
+
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <p-dialog header="Godfather I" [(visible)]="displayDialogCharacter" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    <div *ngFor="let item of selectedCharacter?.tvSeries">
+      {{item}}
+    </div>
+    <p-footer>
+
+    </p-footer>
+  </p-dialog>
+
+</div>
+
+
+<button pButton type="button" label="testApi" (click)="clickTestApi()"></button>
+<button pButton type="button" label="clear" (click)="clearTestApi()"></button>
+From Release: <p-calendar    [showIcon]="true"></p-calendar>
+{{fromReleaseDateControl.value?.toISOString()}}
+To Release Date: <p-calendar [formControl]="ToReleaseDateControl" [showIcon]="true"></p-calendar>
+<p-progressSpinner *ngIf="spinner" [style]="{width: '50px', height: '50px'}" strokeWidth="8" fill="#EEEEEE"
+  animationDuration=".5s">
+</p-progressSpinner> -->
+<!-- {{appComponentBookList | json}} -->
+<!-- <div>
+
+  <p-table [value]="appComponentBookList">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>name</th>
+        <th>released</th>
+
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-book>
+      <tr>
+        <td>{{book.name}}</td> -->
+<!-- pipedate -->
+<!-- <td>{{book.released | date:'medium'}}</td>
+
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+----------------------------------------------------------------------
+departmentName : <input pInputText appDebounce (debounce)="queryDepartment()" [formControl]="departmentName"
+  type="text"><br>
+<button pButton type="button" label="getDepartment" (click)="clickDepartmentApi()"></button>
+<button pButton type="button" label="add" (click)="openAddDepartment()"></button>
+<button pButton type="button" label="clear" (click)="clearDepartment()"></button>
+
+<p-radioButton name="appStatus" [value]="null" label="ทั้งหมด" [formControl]="departmentStatus"></p-radioButton>
+<p-radioButton name="appStatus" value="Y" label="Active" [formControl]="departmentStatus"></p-radioButton>
+<p-radioButton name="appStatus" value="N" label="Deactive" [formControl]="departmentStatus"></p-radioButton>
+
+<div>
+  <p-table [value]="departmentList" selectionMode="single" (onRowSelect)="selectDepartment($event)">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>departmentCode</th>
+        <th>departmentName</th>
+        <th>status</th> -->
+<!-- <th style="width:105px"></th> -->
+<!-- </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-department>
+      <tr [pSelectableRow]="department">
+        <td>{{department.departmentCode}}</td>
+        <td>{{department.departmentName}}</td>
+        <td>{{department.status | departmentStatus}}</td> -->
+<!-- <td><button pButton type="button" label="Remove" class="ui-button-danger"></button></td> -->
+
+
+<!-- </tr>
+    </ng-template>
+  </p-table> -->
+
+<!-- <p-toast></p-toast>
+  <p-dialog [formGroup]="departmentFormGroup" header="Edit Department" [(visible)]="displayDepartment"
+    [focusOnShow]="false" [responsive]="true" showEffect="fade" [modal]="true" [style]="{width: '300px'}">
+    <div class="p-grid">
+      <div class="p-col-12">
+        DepartmentCode:
+        <input formControlName="departmentCode" type="text" pInputText>
+      </div>
+      <div class="p-col-12">
+        DepartmentName:
+        <input formControlName="departmentName" type="text" pInputText>
+      </div>
+      <div class="p-col-12">
+        Province:
+        <input formControlName="province" type="text" pInputText>
+      </div>
+      <div class="p-col-12">
+        Budget:
+        <p-inputNumber formControlName="budget"></p-inputNumber>
+      </div>
+      <div class="p-col-12">
+        Remark:
+        <input formControlName="remark" type="text" pInputText>
+      </div>
+      <div class="p-col-12">
+        Telephone:
+        <input formControlName="telephone" type="text" pInputText>
+      </div>
+      <div class="p-col-12">
+        Status:
+        <p-radioButton formControlName="status" name="appStatus" value="" label="ทั้งหมด"></p-radioButton>
+        <p-radioButton formControlName="status" name="appStatus" value="Y" label="Active"></p-radioButton>
+        <p-radioButton formControlName="status" name="appStatus" value="N" label="Deactive"></p-radioButton>
+      </div>
+      <div class="p-col-12" style="text-align: center;">
+
+        <button *ngIf="departmentMode==='update'" (click)="updateDepartment()" pButton type="button"
+          label="Update"></button>
+        <button *ngIf="departmentMode==='add'" (click)="addDepartment()" icon="pi pi-check" pButton type="button"
+          label="add"></button>
+        <button *ngIf="departmentMode==='update'" (click)="removeDepartment()" pButton type="button" label="Remove"
+          icon="pi pi-times" class="ui-button-danger"></button>
+        <button (click)="clearDialogDepartment()" pButton type="button" label="reset"></button>
+      </div>
+    </div>
+  </p-dialog>
+</div> -->
+<!-- 
+sample2 : <input type="text" [formControl]="sample2Control">
+dirty: {{sample2Control.dirty}}
+invalid: {{sample2Control.invalid}}
+<button pButton label="resetSample2" (click)="resetSample2()"></button>
+<div *ngIf="sample2Control.dirty">
+  message จะแสดงเมื่อ dirty
+</div>
+<div *ngIf="sample2Control.dirty && sample2Control.invalid">
+  message จะแสดงเมื่อ dirty และ invalid
+</div>
+
+<div *ngIf="sampleGroup.get('email1Control').dirty && sampleGroup.get('email1Control').invalid">
+  message จะแสดงเมื่อ dirty และ invalid
+</div>
+sample: <input pInputText [formControl]="sampleControl" type="text">
+<button pButton label="clear" (click)="clearSample()"></button>
+
+
+{{sampleGroup.get('email1Control').errors | json}}
+{{sampleGroup.get('email1Control').hasError('required') | json}}
+<fieldset [formGroup]="sampleGroup">
+  <legend>sample Group</legend>
+  email1: <input pInputText formControlName="email1Control" type="text">
+  email2: <input pInputText formControlName="email2Control" type="text">
+  email3: <input pInputText formControlName="email3Control" type="text">
+  email4: <input pInputText formControlName="email4Control" type="text">
+  cars: <p-dropdown formControlName="carsControl" [options]="cars" editable="true" placeholder="Select a Brand">
+  </p-dropdown>
+  telephone: <input pInputText placeholder="0xx-xxxxxxx" formControlName="telephoneControl">
+  status:
+  <p-radioButton name="status" value="active" label="active" formControlName="statusControl"></p-radioButton>
+  <p-radioButton name="status" value="deactive" label="deactive" formControlName="statusControl"></p-radioButton>
+  <button pButton label="clear" (click)="clearSampleGroup()"></button>
+  <button pButton label="mock" (click)="mockSampleGroup()"></button>
+  <button pButton label="submitApi" (click)="submitApiSampleGroup()"></button>
+</fieldset>
+
+{{sampleGroup.get('email2Control').errors | json}}
+
+<div *ngIf="sampleGroup.get('email1Control').hasError('required')">
+  <p-message severity="error" text="กรุณากรอก email1"></p-message>
+</div>
+<div *ngIf="sampleGroup.get('email2Control').hasError('required')">
+  <p-message severity="error" text="กรุณากรอก email2"></p-message>
+</div>
+<div *ngIf="sampleGroup.get('email2Control').hasError('space')">
+  <p-message severity="error" text="กรุณาอย่าเว้นช่องว่าง"></p-message>
+</div>
+<div *ngIf="sampleGroup.get('email2Control').hasError('dangerousName')">
+  <p-message severity="error" text="กรุณากรอกชื่อดีๆ"></p-message>
+</div>
+<div *ngIf="sampleGroup.get('email3Control').hasError('required')">
+  <p-message severity="error" text="กรุณากรอก email3"></p-message>
+</div>
+<div *ngIf="sampleGroup.get('email4Control').hasError('required')">
+  <p-message severity="error" text="กรุณากรอก email4"></p-message>
+</div>
+<div *ngIf="sampleGroup.get('carsControl').hasError('required')">
+  <p-message severity="error" text="กรุณากรอก car"></p-message>
+</div>
+<div *ngIf="sampleGroup.get('telephoneControl').hasError('required') && sampleGroup.get('telephoneControl').dirty">
+  <p-message severity="error" text="กรุณากรอก telephone"></p-message>
+</div>
+<div *ngIf="sampleGroup.get('telephoneControl').hasError('phone') && sampleGroup.get('telephoneControl').dirty">
+  <p-message severity="error" text="รูปแบบ phone ไม่ถูกต้อง"></p-message>
+</div>
+<div *ngIf="sampleGroup.get('statusControl').hasError('required')">
+  <p-message severity="error" text="กรุณากรอก status"></p-message>
+</div> -->
+
+
+
+<!-- ------------ day 2 ------------- -->
+<!-- <div>
   <app-select-item></app-select-item>
   
   <input type="text" appMyInputText 
   [(value)]="myDirectiveValue" >
   <button type="button" appDebounce (debounce)="myDirectiveValue=''">clear</button>
-  <p-button label="Click"></p-button>
+  <p-button label="Click"></p-button> -->
 
-  <p-dropdown [options]="cities"  
+<!-- <p-dropdown [options]="cities"  
   placeholder="Select a City" 
   optionLabel="name" 
-  [showClear]="true"></p-dropdown>
-</div>
------------ day 1 -----------------
+  [showClear]="true"></p-dropdown> -->
+<!-- </div> -->
 
-search: <input type="text" #searchInputText (input)="search(searchInputText.value)">
+<!-- <app-search-form></app-search-form>
+<app-table-form></app-table-form> -->
+<!-- ----------- day 1 ----------------- -->
+
+<!-- search: <input type="text" #searchInputText (input)="search(searchInputText.value)">
 <table>
   <tr *ngFor="let product of displayProducts">
     <td>{{ product.name }}:</td>
@@ -69,7 +313,7 @@ search: <input type="text" #searchInputText (input)="search(searchInputText.valu
   type="button">
   buy
 </button>
-</div>
+</div> -->
 
 
 <!-- <div>
@@ -77,7 +321,7 @@ search: <input type="text" #searchInputText (input)="search(searchInputText.valu
   </app-adjuster>
 </div> -->
 
-<table>
+<!-- <table>
   <tr *ngFor="let cart of carts">
     <td>
        {{cart.name}}: 
@@ -94,4 +338,4 @@ search: <input type="text" #searchInputText (input)="search(searchInputText.valu
       {{ sumCart }}
     </td>
   </tr>
-</table>
+</table> -->

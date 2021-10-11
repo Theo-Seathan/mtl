@@ -1,0 +1,132 @@
+<div class="p-fluid p-grid p-formgrid" style="padding-left: 200px;">
+
+    <div class="header p-field p-col-12 p-md-12">
+        Create User Profile
+    </div>
+
+    <!-- line 1 -->
+    <div class="p-field p-col-12 p-md-4">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText>
+            <label for="float-input">Employee ID</label>
+        </span>
+    </div>
+    <div class="p-field p-col-12 p-md-1">
+        <i class="icon-search pi pi-search"></i>
+    </div>
+    <div class="p-field p-col-12 p-md-1">
+    </div>
+
+    <div class="p-field p-col-12 p-md-5">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText>
+            <label for="float-input">Username</label>
+        </span>
+    </div>
+
+    <!-- line 2 -->
+    <div class="p-field p-col-12 p-md-5">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText>
+            <label for="float-input">First Name</label>
+        </span>
+    </div>
+    <div class="p-field p-col-12 p-md-1">
+    </div>
+    <div class="p-field p-col-12 p-md-5">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText>
+            <label for="float-input">Last Name</label>
+        </span>
+    </div>
+
+    <!-- line 3 -->
+    <div class="p-field p-col-12 p-md-5">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText>
+            <label for="float-input">Position</label>
+        </span>
+    </div>
+    <div class="p-field p-col-12 p-md-1">
+    </div>
+    <div class="p-field p-col-12 p-md-5">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText>
+            <label for="float-input">Department</label>
+        </span>
+    </div>
+
+    <!-- line 4 -->
+    <div class="p-field p-col-12 p-md-5">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText>
+            <label for="float-input">Email</label>
+        </span>
+    </div>
+    <div class="p-field p-col-12 p-md-1">
+    </div>
+    <div class="p-field p-col-12 p-md-5">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText>
+            <label for="float-input">Mobile</label>
+        </span>
+    </div>
+
+    <!-- line 5-->
+    <div class="p-field p-col-12 p-md-5">
+        <p-dropdown [options]="cities" placeholder="User Role" optionLabel="name"></p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-md-1">
+    </div>
+    <div class="p-field p-col-12 p-md-5">
+        <span class="p-float-label">
+            <label for="basic">User Expire Date</label>
+            <p-calendar [showIcon]="true" inputId="icon" placeholder="User Expire Date"></p-calendar>
+        </span>
+    </div>
+
+    <div class="p-field p-col-12 p-md-12">
+        <span style="font-family: Ubuntu;">User Status</span>
+        <div class="p-field-radiobutton" style="margin-top:13px">
+            <p-radioButton name="city" value="Active" [(ngModel)]="city" inputId="city1"></p-radioButton>
+            <label for="city1" style="font-family: Ubuntu;">Active</label>
+
+            <p-radioButton name="city" value="Inactive" [(ngModel)]="city" inputId="city2" style="margin-left: 30px;">
+            </p-radioButton>
+            <label for="city2" style="font-family: Ubuntu;">Inactive</label>
+        </div>
+    </div>
+
+    <div class="p-field p-col-12 p-md-11">
+        <span class="p-float-label">
+            <textarea id="float-input" [rows]="5" pInputTextarea style="border-radius: 12px;"></textarea>
+            <label for="float-input">Remark</label>
+        </span>
+    </div>
+
+
+
+</div>
+
+<div class="submit">
+    <button pButton pRipple type="button" label="Create" class="p-button-rounded" (click)="confirm()"
+        style="background-color: #ed028c;margin-right: 8px;width: 110px;"></button>
+    <button pButton pRipple type="button" label="Cancel" class="p-button-rounded p-button-secondary"
+        style="width: 110px;"></button>
+</div>
+
+<p-dialog [(visible)]="display" [style]="{width: '30vw'}">
+    <ng-template pTemplate="header" style="background-color: #ed028c;">
+        Create User
+    </ng-template>
+    <br>
+    <br>
+    <p style="text-align: center;">Please confirm to create user</p>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple type="button" label="Confirm" class="p-button-rounded" (click)="confirm_create()"
+            style="background-color: #ed028c;margin-right: 8px;width: 110px;"></button>
+        <button pButton pRipple type="button" label="Cancel" class="p-button-rounded p-button-secondary"
+            (click)="display=false" style="width: 110px;"></button>
+    </ng-template>
+</p-dialog>
+<p-toast></p-toast>

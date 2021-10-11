@@ -1,0 +1,193 @@
+body {
+  font-family: Ubuntu, "times new roman", times, roman, serif;
+}
+
+:host ::ng-deep .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active {
+  background-color: #d90096;
+  border: 1px solid #d600d9;
+}
+
+:host ::ng-deep .p-menubar {
+  margin-left: 8px;
+  display: grid !important;
+  border-right: none;
+  // width: fit-content;
+}
+:host ::ng-deep .p-menubar-root-list {
+  float: right;
+}
+
+:host ::ng-deep .p-menuitem {
+  width: 258px;
+  font-size: 16px;
+  text-align: center;
+}
+:host
+  ::ng-deep
+  .p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link {
+  justify-content: center;
+}
+
+:host
+  ::ng-deep
+  .p-menubar-root-list
+  > .p-menuitem-active
+  > p-menubarsub
+  > .p-submenu-list {
+  width: 258px;
+}
+
+// .layout-wrapper.layout-menu li a > .my-margin-left {
+//   margin-left: 25 px;
+// }
+
+/* 
+.layout-wrapper .layout-menu li a > .my-margin-left {
+  margin-left: 25px;
+  float: right;
+}
+
+.myMenu li.wijmo-wijmenu-parent > a {
+  text-align: right;
+}
+
+.myMenu ul:first-child > li.wijmo-wijmenu-parent > a > span,
+.myMenu ul:first-child > li.wijmo-wijmenu-parent > a > span > span {
+  float: left !important;
+}
+
+.myMenu li.wijmo-wijmenu-parent > a > span,
+.myMenu li.wijmo-wijmenu-parent > a > span > span {
+  float: none !important;
+  display: inline-block;
+  vertical-align: bottom;
+} */
+
+.p-tabmenu {
+  float: right;
+}
+.p-tabmenu .p-reset {
+  position: relative;
+}
+
+.p-tabmenu .p-reset > li:nth-child(1) {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.test {
+  float: right;
+  text-align: right;
+}
+
+.logo {
+  width: 15rem;
+  height: 10rem;
+  position: absolute;
+  z-index: 10;
+  left: -35px;
+  top: 0;
+  background: url("../../assets/images/logo-wrap.png") no-repeat 10px 0;
+  background-size: contain;
+}
+
+img.logo-header {
+  width: 55%;
+  margin: 17px 0 0 78px;
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100%;
+}
+
+.login-form {
+  text-align: right;
+  font-size: 13px;
+  font-family: Ubuntu;
+  color: white;
+  float: right;
+  margin-top: 32px;
+}
+
+.breadCrumb {
+  font-size: 13px;
+  font-family: Ubuntu;
+  color: white;
+}
+
+.sub-title {
+  font-family: Ubuntu;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  text-align: left;
+  color: #ee4fac;
+}
+
+.logout {
+  cursor: pointer;
+}
+
+.title {
+  font-family: Ubuntu;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  text-align: left;
+  color: #ee4fac;
+  font-size: 47px;
+}
+
+.loginForm {
+  float: right;
+}
+
+.img-background {
+  background: #fff url("../../assets/images/bgd-tools-contact.svg") no-repeat
+    bottom right;
+  background-size: 520px;
+  background-position-x: 1274px;
+  border-radius: 6px;
+  position: relative;
+  height: inherit;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  position: relative;
+  overflow-y: auto;
+}
+
+.footer {
+  font-family: Ubuntu;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 101%;
+  padding-top: 5px;
+  padding-left: 83px;
+  color: white;
+  font-size: 12px;
+  background-color: #ed028c;
+  height: 48px;
+  margin-top: 120px;
+  margin-left: -18px;
+  margin-right: -8px;
+}
+
+.header {
+  font-family: Ubuntu;
+  display: block;
+  background-color: #ee4fac;
+  height: 60px;
+  margin-top: -32px;
+  margin-left: 8px;
+  width: 100%;
+}

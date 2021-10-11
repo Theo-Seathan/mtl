@@ -1,0 +1,48 @@
+<p-table [value]="departmentList" 
+selectionMode="single" 
+(onRowSelect)="rowSelected = $event.data;display = true">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>departmentCode</th>
+            <th>departmentName</th>
+            <th>status</th>
+            <th>province</th>
+            <th>buddget</th>
+            <th>telephone</th>
+            <th>remark</th>
+        </tr>
+    </ng-template >
+    <ng-template pTemplate="body" let-department>
+        <tr [pSelectableRow]="department">
+            <td>{{department.departmentCode}}</td>
+            <td>{{department.departmentName}}</td>
+            <td>{{department.status}}</td>
+            <td>{{department.province}}</td>
+            <td>{{department.buddget}}</td>
+            <td>{{department.telephone}}</td>
+            <td>{{department.remark}}</td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:left">
+            <button type="button" pButton icon="pi pi-plus" (click)="openDialogModeAdd()" label="Add"></button>
+        </div>
+    </ng-template>  
+</p-table>
+
+<!-- นี่คือ dialog  -->
+<p-dialog header="Godfather I" 
+[(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+    [draggable]="false" [resizable]="false">
+  <app-save-form #saveForm [department]="rowSelected">
+  </app-save-form>
+        <p-footer>
+            <button type="button" pButton icon="pi pi-check" (click)="closeDialog(saveForm.formGroup.valid)" label="Save"></button>
+            <button type="button" pButton icon="pi pi-times" (click)="closeDialog(true)" label="Cancel" class="ui-button-secondary"></button>
+        </p-footer>
+</p-dialog>
+
+<button pButton label="dialog" 
+(click)="display=true">
+</button>
+

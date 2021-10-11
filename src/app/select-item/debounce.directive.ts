@@ -17,4 +17,14 @@ export class DebounceDirective {
       this.debounce.emit();
     }, 300);
   }
+
+
+  @HostListener('click', ['$event']) onInput(event: MouseEvent) {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+    this.timeout = setTimeout(() => {
+      this.debounce.emit();
+    }, 300);
+  }
 }
